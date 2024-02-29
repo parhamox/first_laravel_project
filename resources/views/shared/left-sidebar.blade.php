@@ -8,6 +8,6 @@
         </ul>
     </div>
     <div class="card-footer text-center py-2">
-        <a class="btn btn-link btn-sm" href="{{Route ('profile')}}">View Profile </a>
+
     </div>
 </div>

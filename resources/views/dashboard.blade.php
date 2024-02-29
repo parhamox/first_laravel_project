@@ -1,3 +1,5 @@
+
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -15,3 +17,34 @@
         </div>
     </div>
 </x-app-layout>
+@extends('layout.layout')
+
+@section('content')
+<div class="row">
+    <div class="col-3">
+        @include('shared.left-sidebar')
+    </div>
+
+    <div class="col-6">
+        @include('shared.succes-message')
+        @include('shared.submit-idea')
+        <hr>
+
+        @forelse ($ideas as $idea)
+            <div class="mt-3">
+                @include('shared.idea-card')
+            </div>
+        @empty
+            <p class="text-center mt-4">No results Found.</p>
+        @endforelse
+
+        <div class="mt-3">
+            {{ $ideas->withQueryString()->links() }}
+        </div>
+    </div>
+
+    <div class="col-3">
+        @include('shared.search-bar')
+    </div>
+</div>
+@endsection
