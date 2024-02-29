@@ -41,4 +41,13 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
+
+    public function profile(Request $request)
+{
+    $user = Auth::user(); // Assuming you use Laravel's authentication
+
+    return view('profile', compact('user'));
+}
+
 }
