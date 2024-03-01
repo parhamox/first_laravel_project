@@ -17,9 +17,17 @@ data-bs-theme="dark">
             </li>
             @endguest
             @auth
+
             <li class="nav-item">
-                <a class="{{(Route::is('profile')) ? 'text-danger' : ''}} nav-link" href="{{route ('profile')}}"> HI  {{Auth::user()->name}} </a>
+                <a class="{{(Route::is('profile')) ? 'text-success' : ''}} nav-link" href="{{route ('profile')}}"> HI  {{Auth::user()->name}} </a>
             </li>
+
+            @if (Auth :: user()->is_admin)
+            <li class="nav-item">
+                <a class="{{ (Route::is('admin.dashboard')) ? 'text-success mt-1' : ''}} nav-link fa-solid fa-person-circle-check mt-1" href="{{route ('admin.dashboard')}}"></a>
+            </li>
+
+            @endif
 
             <li class="nav-item ">
           <form  action="{{route ('logout')}}" method="POST">

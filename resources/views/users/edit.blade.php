@@ -8,7 +8,7 @@
             @include('shared.left-sidebar')
         </div>
         <div class="col-6">
-            @include('shared.succes-massage')
+            @include('shared.succes-message')
             <div class="mt-3">
                 <a href="{{ route ('dashboard')}}"><button class="btn btn-warning btn-sm fa fa-arrow-left mb-3"></button></a>
                 @include('shared.user-edit-card')

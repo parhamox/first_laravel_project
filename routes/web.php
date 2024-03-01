@@ -7,6 +7,7 @@ use App\Http\Controllers\Authcontroller;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\dashboardcontroler;
 use App\Http\Controllers\usercontroller;
+use App\Http\Controllers\Admin\DashboardController as admindashboardController;
 use Faker\Guesser\Name;
 use GuzzleHttp\Middleware;
 
@@ -82,9 +83,12 @@ Route:: get('profile' , [UserController::class, 'profile']) ->middleware('auth')
 
 Route::get('/terms',function (){return view('terms');});
 
+
+
 // In routes/web.php
 Route::get('/profile/edit', function () {
     // Handle your profile edit logic here
     return view('profile.edit'); // Replace 'profile.edit' with your actual view name
   })->name('profile.edit');
 
+  Route::get('/admin', [admindashboardController::class, 'index'])-> name('admin.dashboard')->middleware('auth' , 'admin');
