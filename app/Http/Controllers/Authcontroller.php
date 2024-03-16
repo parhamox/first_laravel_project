@@ -42,8 +42,7 @@ class Authcontroller extends Controller
             ]
             );
 
-            Mail::to($user-> email )
-            -> send(new WelcomeEmail($user));
+
             return redirect()->route('dashboard')->  with('Success'  , 'youre  registred ');
 
 

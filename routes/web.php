@@ -55,7 +55,7 @@ Route::get('/{idea}/edit', [ IdeaController::class, 'edit'])-> name('edit')->Mid
 
 Route::put('/{idea}', [ IdeaController::class, 'update'])-> name('update')->Middleware('auth');
 
-Route::post('', [ IdeaController ::class, 'store'])-> name('create')->Middleware('auth');
+Route::post('', [ IdeaController::class, 'store'])-> name('create')->Middleware('auth');
 
 Route::delete('/{idea}', [ IdeaController ::class, 'destroy'])-> name('destroy')->Middleware('auth');
 
